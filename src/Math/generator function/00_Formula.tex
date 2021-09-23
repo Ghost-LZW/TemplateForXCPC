@@ -1,0 +1,50 @@
+\begin{enumerate}
+
+\item 生成函数
+
+形如$G(x) = \sum_{i=0}^n a_ix_i$的表示一个序列的多项式函数，我们称之为普通生成函数
+
+$$\sum_{i=0}^{\infty} x^i = \frac{1}{1-x}$$
+
+\item 常用变换
+
+$$\frac{1-x^{k+1}}{1-x}$$ 至多为k
+
+$$\frac{1}{1-x^k}$$ k的倍数
+
+\item 广义二项式定理
+
+$$\frac{1}{(1-x)^n} = \sum_{k=0}^{\infty} C_{n+k-1}^{k-1} x^k$$
+
+形如$G(x) = \sum_{i=0}^n a_i \frac{x_i}{i!}$的表示序列的多项式函数，我们称之为指数生成函数。
+
+$$e^x = \sum_{i=0}^{\infty} \frac{x^i}{i!}$$
+
+\item 常用变换
+
+* $$e^{-x} = 1 - \frac{x^1}{1} + \frac{x^2}{2!} -\frac{x^3}{3!} + \frac{x^4}{4!}\dots$$
+* $$\frac{e^x + e^{-x}}{2} = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^6}{6!}\dots$$
+* $$\frac{e^x - e^{-x}}{2} = \frac{x}{1} + \frac{x^3}{3!} + \frac{x^5}{5!} + \frac{x^7}{7!}$$
+* $$e^{kx} = 1 + \frac{kx}{1} + \frac{k^2x^2}{2!} + \frac{k^3x^3}{3!} + \frac{k^4x^4}{4!} \dots$$
+
+\item eg :
+
+牛客多校第五场 C Easy 题意
+
+a是和为N的序列，b是何为M的序列，$P = \prod_{i=1}^{K}\min(a_i, b_i)$
+
+求在所有情况下的P的和
+
+题解
+
+构造母函数$S = \sum_{i, j \in [1, \infty)}\min(i, j)x^iy^j$
+
+容易得答案为$S^k$的$x^ny^m$的系数
+
+$$
+S^k = x^ky^k*\prod_{a=1, b=1, c=1}^{\infty}C_{k+a-1}^ax^a*C_{k+b-1}^{b}y^b*C_{k+c-1}^c{xy}^c
+$$
+
+要求此时$x^ny^m$的系数，枚举xy的数量，用x， y来补齐即可
+
+\end{enumerate}

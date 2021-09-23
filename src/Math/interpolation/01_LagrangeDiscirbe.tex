@@ -1,0 +1,33 @@
+\begin{enumerate}
+
+\item Lagrange
+
+$$ f(k) = \sum_{i = 0}^{n} y_i \prod_{i \not = j} \frac{k - x[j]}{x[i] - x[j]} $$
+
+时间复杂度$\mathcal O(n^2)$
+
+\item 在x取值连续时的做法
+
+$$ F(k) = \sum_{i=0}^n y_i \prod_{i \not = j} \frac{k - j}{i - j} $$
+
+$$ P_i = \prod_{j = 0}^{i} k - j $$
+
+$$ S_i = \prod_{j = i}^n k - j $$
+
+$$ F(x) = \sum_{i=0}^n \frac {P_{i-1} S_{i+1}}{(-1)^{n-i} \Gamma(i) \Gamma(n-i)} $$
+
+时间复杂度$\mathcal O(n)$
+
+\item 重心拉格朗日插值法
+
+$$ f(k) = \sum_{i = 0}^{n} y_i \prod_{i \not = j} \frac{k - x[j]}{x[i] - x[j]} $$
+
+设 $ g = \prod_{i=1}^n k - x[i] $
+
+$$f(k) = g\sum_{i = 0}^{n} \prod_{i \not = j} \frac{y_i}{(k - x[i])(x[i] - x[j])}$$
+
+设 $t_i = \frac{y_i}{\prod_{j \not =i} x_i - x_j}$
+
+$$f(k) = g\sum_{i = 0}^{n}  \frac{t_i}{(k - x[i])}$$
+
+\end{enumerate}

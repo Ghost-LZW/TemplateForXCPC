@@ -1,0 +1,62 @@
+\begin{enumerate}
+
+\item FWT
+
+$$C_k=\sum_{i\oplus j = k} A_i*B_j$$
+
+其中$\oplus$是位运算,可以是与,或,异或等
+
+\item OR
+
+$$C'_k=A'_k*B'_k$$
+
+$$FWT(A)=
+\begin{cases}
+(FWT(A_0),FWT(A_0+A_1))\quad(n\neq 1)\\
+A\quad(n=1)
+\end{cases}$$
+
+$$IFWT(A)=
+\begin{cases}
+(IFWT(A_0),IFWT(A_1-A_0))\quad(n \neq 1)\\
+A\quad(n = 1)
+\end{cases}
+$$
+
+\item AND
+
+$$FWT(A)=
+\begin{cases}
+(FWT(A_0+A_1),FWT(A_1))\quad(n\neq 1)\\
+A\quad (n=1)
+\end{cases}$$
+
+$$IFWT(A)=
+\begin{cases}
+(IFWT(A_0-A_1),IFWT(A_1))\quad (n\neq 1)\\
+A\quad(n=1)
+\end{cases}$$
+
+\item XOR
+
+$$
+C_n=A_n*B_n
+$$
+
+$$FWT(A)=
+\begin{cases}
+(FWT(A_0)+FWT(A_1),FWT(A_0)-FWT(A_1))\quad (n \neq 1)\\
+A\quad (n = 1)
+\end{cases}$$
+
+$$IFWT(A)=
+\begin{cases}
+(\frac{IFWT(A_0)+IFWT(A_1)}{2},\frac{IFWT(A_0)-IFWT(A_1)}{2})\quad(n\neq 1)\\
+A\quad(n=1)
+\end{cases}$$
+
+\item 子集卷积
+
+$$c[S]=\sum_{T\subset S}a[T]*b[S\oplus T]$$
+
+\end{enumerate}
